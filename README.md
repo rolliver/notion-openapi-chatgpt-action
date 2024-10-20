@@ -1,4 +1,4 @@
-# Push and Pull Content from Your Notion Workspace with ChatGPT 🔥
+# NotionGPT: Push and Pull Content from Your Notion Workspace with ChatGPT 🔥
 Ever wished you could create Notion pages from ChatGPT? Have you wondered if there's an easy way your ChatGPT could be in sync with knowledge files in your Notion Workspace? 👀 Well, look no more! 
 
 ## Demo
