@@ -1,4 +1,4 @@
-# Pull & Push Content to your Notion workspace with ChatGPT
+# Push and Pull Content from Your Notion Workspace with ChatGPT 🔥
 
 https://github.com/user-attachments/assets/3713f886-cd77-49c5-b223-89a4942a4068
 
