@@ -7,7 +7,7 @@ import { Toaster, toast } from "sonner";
 export default function Home() {
   const handleCopyClick = async () => {
     try {
-      const url = "https://notion-chatgpt.vercel.app/api/yaml";
+      const url = "https://notion-chatgpt.vercel.app/notion-openapi.json";
       await navigator.clipboard.writeText(url);
       toast.success("Notion Import URL copied to clipboard! Paste in ChatGPT 🎉");
     } catch (err) {
@@ -36,8 +36,13 @@ export default function Home() {
             Go to ChatGPT, create a new custom GPT & under the Configure tab, click <code className="bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded-md">Create new action</code>.
           </li>
           <li>
-            Click <code className="bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded-md">Import URL</code> and paste the copied URL. It will automatically insert the YAML spec (~500 lines).
+            Click <code className="bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded-md">Import URL</code> and paste the copied URL. 
           </li>
+          <p className="text-xs font-thin bg-green-100 rounded-sm">This will automatically insert the OpenAPI Json schema (~725 lines) for Notion's APIs. You should see these <b>Available actions</b> appear: getPage, updatePage, createPage, getDatabase, queryDatabase, search, listUsers, getPageOrBlockChildrenContent, appendBlockChildren
+
+
+
+</p>
           <li>
             Click the <code className="bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded-md">Authorization</code> button and select{" "}
             <code className="bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded-md">Bearer</code> as the Auth-Type. Then, paste your Notion API key.
