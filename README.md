@@ -76,6 +76,32 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Page"
+  /pages:
+    post:
+      operationId: createPage
+      summary: Create a new page.
+      description: Creates a new page that is a child of an existing page or database.
+      parameters:
+        - name: Notion-Version
+          in: header
+          required: true
+          description: Notion API version
+          schema:
+            type: string
+            default: "2022-06-28"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PageCreate"
+      responses:
+        "200":
+          description: A JSON object representing the newly created page.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Page"
   /databases/{database_id}:
     get:
       operationId: getDatabase
@@ -182,7 +208,7 @@ paths:
                   $ref: "#/components/schemas/User"
   /blocks/{block_id}/children:
     get:
-      operationId: getPageOrBlockChildren
+      operationId: getPageOrBlockChildrenContent
       summary: Retrieve the children of a block. Pages are also considered blocks.
       parameters:
         - name: block_id
@@ -274,6 +300,7 @@ components:
       required:
         - object
         - id
+        - properties
       properties:
         object:
           type: string
@@ -290,6 +317,53 @@ components:
         properties:
           type: object
           additionalProperties: true
+    PageCreate:
+      type: object
+      required:
+        - parent
+        - properties
+      properties:
+        parent:
+          type: object
+          required:
+            - database_id
+          properties:
+            database_id:
+              type: string
+              format: uuid
+        properties:
+          type: object
+          properties:
+            title:
+              type: array
+              items:
+                type: object
+                properties:
+                  text:
+                    type: object
+                    properties:
+                      content:
+                        type: string
+          additionalProperties: true
+        children:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+        icon:
+          type: object
+          properties:
+            emoji:
+              type: string
+        cover:
+          type: object
+          properties:
+            external:
+              type: object
+              properties:
+                url:
+                  type: string
+                  format: uri
     Database:
       type: object
       required:
