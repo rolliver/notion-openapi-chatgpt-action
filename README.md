@@ -7,7 +7,7 @@ https://github.com/user-attachments/assets/3713f886-cd77-49c5-b223-89a4942a4068
 ## Quickstart
 ### Setup for ChatGPT
 1. Create a custom GPT and click ***Create new action***
-2. Copy and paste the following yaml spec
+2. Go to `https://notion-chatgpt.vercel.app` and click the copy button to get the `Import URL`.
 3. Click "Authentication" and select `API-Key` using the `Bearer` authentication method
 4. Head over to Notion Integrations and copy over your API-Key
 5. Ensure this key has access to the workspace pages & databases you'd like to reference / update
