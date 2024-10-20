@@ -14,8 +14,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Notion x ChatGPT | Sync your GPT with Notion OpenAPI Spec",
-  description: "Push and Pull Content from Your Notion Workspace with ChatGPT 🔥. Use the provide OpenAPI spec for Notion to manipulate your workspace. All you need to sync Notion with your custom GPT is the YAML spec and your Notion API key.",
+  title: "Notion x ChatGPT | NotionGPT",
+  description: "Push and Pull Content from Your Notion Workspace with ChatGPT 🔥. Use the provide OpenAPI spec for Notion to manipulate your workspace. All you need to sync Notion with your custom GPT is the YAML spec and your Notion API key. Sync your GPT with Notion OpenAPI Spec.",
 };
 
 export default function RootLayout({

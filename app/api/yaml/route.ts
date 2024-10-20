@@ -507,7 +507,6 @@ security:
   
     return new NextResponse(yamlContent, {
       status: 200,
-      headers: { 'Content-Type': 'text/yaml' },
     });
   };
   
