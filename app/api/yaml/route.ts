@@ -1,20 +1,8 @@
-# Push and Pull Content from Your Notion Workspace with ChatGPT 🔥
-Ever wished you could create Notion pages from ChatGPT? Have you wondered if there's an easy way your ChatGPT could be in sync with knowledge files in your Notion Workspace? 👀 Well, look no more! 
+import { NextRequest, NextResponse } from "next/server";
 
-## Demo
-https://github.com/user-attachments/assets/3713f886-cd77-49c5-b223-89a4942a4068
-
-## Quickstart
-### Setup for ChatGPT
-1. Create a custom GPT and click ***Create new action***
-2. Copy and paste the following yaml spec
-3. Click "Authentication" and select `API-Key` using the `Bearer` authentication method
-4. Head over to Notion Integrations and copy over your API-Key
-5. Ensure this key has access to the workspace pages & databases you'd like to reference / update
-
-## Raw Notion OpenAPI spec
-Alternatively, you could copy this raw YAML (~500 lines)
-```yaml
+// app/api/yaml/route.ts
+export const GET = async (request: NextRequest): Promise<NextResponse> => {
+    const yamlContent = `
 openapi: 3.1.0
 info:
   title: Notion API
@@ -514,4 +502,11 @@ components:
       bearerFormat: JWT
 security:
   - BearerAuth: []
-```
+    `;
+  
+    return new NextResponse(yamlContent, {
+      status: 200,
+      headers: { 'Content-Type': 'text' },
+    });
+  };
+  
