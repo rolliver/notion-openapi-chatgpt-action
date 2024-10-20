@@ -1,4 +1,4 @@
-# notion-api-openapi-gpt-action
+# Pull & Push Content to your Notion workspace with ChatGPT
 
 https://github.com/user-attachments/assets/3713f886-cd77-49c5-b223-89a4942a4068
 
