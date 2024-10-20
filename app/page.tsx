@@ -20,17 +20,17 @@ export default function Home() {
       {/* Toaster for notifications */}
       <Toaster position="top-center" />
 
-      <main className="flex flex-col items-center gap-12">
+      <main className="flex flex-col items-center gap-2 justify-center max-w-3xl">
         <Image
-          className="dark:invert"
+          className="dark:invert mt-1"
           src="/Notion.webp"
           alt="Notion logo"
-          width={180}
+          width={80}
           height={50}
           priority
         />
 
-        <ol className="list-decimal list-inside space-y-4 text-center sm:text-left text-sm sm:text-base font-mono">
+        <ol className="mt-4 list-decimal list-inside space-y-4 text-center sm:text-left text-sm sm:text-base font-mono">
           <li>Click the <b>Copy Action URL</b> button below to get the Notion Action URL.</li>
           <li>
             Go to ChatGPT, create a new custom GPT & under the Configure tab, click <code className="bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded-md">Create new action</code>.
@@ -38,18 +38,14 @@ export default function Home() {
           <li>
             Click <code className="bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded-md">Import URL</code> and paste the copied URL. 
           </li>
-          <p className="text-xs font-thin bg-green-100 rounded-sm">This will automatically insert the OpenAPI Json schema (~725 lines) to call the official Notion.so API. You should see these <b>Available actions</b> appear: getPage, updatePage, createPage, getDatabase, queryDatabase, search, listUsers, getPageOrBlockChildrenContent, appendBlockChildren
-
-
-
-</p>
+          <p className="text-xs font-thin bg-green-100 rounded-sm"> You should see these <b>Available actions</b> appear from the official Notion API: getPage, updatePage, createPage, getDatabase, queryDatabase, search, listUsers, getPageOrBlockChildrenContent, appendBlockChildren</p>
           <li>
             Click the <code className="bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded-md">Authorization</code> button and select{" "}
             <code className="bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded-md">Bearer</code> as the Auth-Type. Then, paste your Notion API key.
           </li>
         </ol>
 
-        <div className="flex flex-col sm:flex-row gap-4">
+        <div className="flex flex-col sm:flex-row gap-4 mt-4">
           <button
             className="flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-black text-white hover:bg-gray-800 transition-colors"
             onClick={handleCopyClick}
