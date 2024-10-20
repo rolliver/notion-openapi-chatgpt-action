@@ -7,7 +7,7 @@ import { Toaster, toast } from "sonner";
 export default function Home() {
   const handleCopyClick = async () => {
     try {
-      const url = "https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app";
+      const url = "https://notion-chatgpt.vercel.app/api/yaml";
       await navigator.clipboard.writeText(url);
       toast.success("Notion Import URL copied to clipboard! Paste in ChatGPT 🎉");
     } catch (err) {

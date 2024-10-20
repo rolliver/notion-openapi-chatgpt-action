@@ -2,7 +2,8 @@ import { NextResponse } from "next/server";
 
 // app/api/yaml/route.ts
 export const GET = async (): Promise<NextResponse> => {
-    const yamlContent = `
+    const yamlContent = 
+`
 openapi: 3.1.0
 info:
   title: Notion API
@@ -502,11 +503,11 @@ components:
       bearerFormat: JWT
 security:
   - BearerAuth: []
-    `;
+`;
   
     return new NextResponse(yamlContent, {
       status: 200,
-      headers: { 'Content-Type': 'text' },
+      headers: { 'Content-Type': 'text/yaml' },
     });
   };
   
