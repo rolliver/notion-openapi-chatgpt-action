@@ -1,5 +1,7 @@
 # notion-api-openapi-gpt-action
 
+https://github.com/user-attachments/assets/3713f886-cd77-49c5-b223-89a4942a4068
+
 ## Setup for ChatGPT
 1. Create a custom GPT and click ***Create new action***
 2. Copy and paste the following yaml spec
