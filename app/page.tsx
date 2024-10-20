@@ -38,7 +38,7 @@ export default function Home() {
           <li>
             Click <code className="bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded-md">Import URL</code> and paste the copied URL. 
           </li>
-          <p className="text-xs font-thin bg-green-100 rounded-sm">This will automatically insert the OpenAPI Json schema (~725 lines) for Notion's APIs. You should see these <b>Available actions</b> appear: getPage, updatePage, createPage, getDatabase, queryDatabase, search, listUsers, getPageOrBlockChildrenContent, appendBlockChildren
+          <p className="text-xs font-thin bg-green-100 rounded-sm">This will automatically insert the OpenAPI Json schema (~725 lines) to call the official Notion.so API. You should see these <b>Available actions</b> appear: getPage, updatePage, createPage, getDatabase, queryDatabase, search, listUsers, getPageOrBlockChildrenContent, appendBlockChildren
 
 
 
