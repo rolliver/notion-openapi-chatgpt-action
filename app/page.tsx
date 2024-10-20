@@ -38,7 +38,7 @@ export default function Home() {
           <li>
             Click <code className="bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded-md">Import URL</code> and paste the copied URL. 
           </li>
-          <p className="text-xs font-thin bg-green-100 rounded-sm"> You should see these <b>Available actions</b> appear from the official Notion API: getPage, updatePage, createPage, getDatabase, queryDatabase, search, listUsers, getPageOrBlockChildrenContent, appendBlockChildren</p>
+          <p className="text-xs font-thin bg-green-100 rounded-sm text-black"> You should see these <b>Available actions</b> appear from the official Notion API: getPage, updatePage, createPage, getDatabase, queryDatabase, search, listUsers, getPageOrBlockChildrenContent, appendBlockChildren</p>
           <li>
             Click the <code className="bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded-md">Authorization</code> button and select{" "}
             <code className="bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded-md">Bearer</code> as the Auth-Type. Then, paste your Notion API key.
