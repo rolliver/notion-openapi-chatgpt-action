@@ -1,11 +1,26 @@
+"use client"; // Enable client-side behavior
+
+import { useState } from "react";
 import Image from "next/image";
+import { Toaster, toast } from "sonner";
 
 export default function Home() {
+  const handleCopyClick = async () => {
+    try {
+      const url = "https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app";
+      await navigator.clipboard.writeText(url);
+      toast.success("Notion Import URL copied to clipboard! Paste in ChatGPT 🎉");
+    } catch (err) {
+      toast.error("Failed to copy URL 😢");
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-between sm:p-16">
-      {/* Main Content */}
+      {/* Toaster for notifications */}
+      <Toaster position="top-center" />
+
       <main className="flex flex-col items-center gap-12">
-        {/* Notion Logo */}
         <Image
           className="dark:invert"
           src="/Notion.webp"
@@ -15,38 +30,24 @@ export default function Home() {
           priority
         />
 
-        {/* Instructions List */}
         <ol className="list-decimal list-inside space-y-4 text-center sm:text-left text-sm sm:text-base font-mono">
+          <li>Click the <b>Copy Action URL</b> button below to get the Notion Action URL.</li>
           <li>
-            Click <b>Copy Action</b> to get the Notion Action URL.
+            Go to ChatGPT, create a new custom GPT & under the Configure tab, click <code className="bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded-md">Create new action</code>.
           </li>
           <li>
-            Click{" "}
-            <code className="bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded-md">
-              Import URL
-            </code>{" "}
-            and paste the URL to insert a YAML spec (~500 lines).
+            Click <code className="bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded-md">Import URL</code> and paste the copied URL. It will automatically insert the YAML spec (~500 lines).
           </li>
           <li>
-            Click the{" "}
-            <code className="bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded-md">
-              Authorization
-            </code>{" "}
-            button and select{" "}
-            <code className="bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded-md">
-              Bearer
-            </code>{" "}
-            as the Auth-Type. Then, paste your Notion API key.
+            Click the <code className="bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded-md">Authorization</code> button and select{" "}
+            <code className="bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded-md">Bearer</code> as the Auth-Type. Then, paste your Notion API key.
           </li>
         </ol>
 
-        {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4">
-          <a
+          <button
             className="flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-black text-white hover:bg-gray-800 transition-colors"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            onClick={handleCopyClick}
           >
             <Image
               src="https://nextjs.org/icons/vercel.svg"
@@ -56,7 +57,8 @@ export default function Home() {
               className="dark:invert"
             />
             Copy Action URL
-          </a>
+          </button>
+
           <a
             className="flex items-center justify-center gap-2 px-5 py-3 rounded-full border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             href="https://www.notion.so/profile/integrations"
@@ -66,11 +68,12 @@ export default function Home() {
             Get Notion API Key
           </a>
         </div>
-        <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+
+        <div style={{ textAlign: "center", marginTop: "2rem" }}>
           <video
             controls
             width="600"
-            style={{ border: '1px solid #ccc', borderRadius: '8px' }}
+            style={{ border: "1px solid #ccc", borderRadius: "8px" }}
           >
             <source
               src="https://github.com/user-attachments/assets/3713f886-cd77-49c5-b223-89a4942a4068"
@@ -81,7 +84,6 @@ export default function Home() {
         </div>
       </main>
 
-      {/* Footer */}
       <footer className="flex flex-wrap items-center justify-center gap-6 py-4">
         {[
           {
