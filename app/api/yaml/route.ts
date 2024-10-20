@@ -1,7 +1,7 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
 // app/api/yaml/route.ts
-export const GET = async (request: NextRequest): Promise<NextResponse> => {
+export const GET = async (): Promise<NextResponse> => {
     const yamlContent = `
 openapi: 3.1.0
 info:

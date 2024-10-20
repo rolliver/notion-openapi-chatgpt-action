@@ -1,6 +1,6 @@
 "use client"; // Enable client-side behavior
 
-import { useState } from "react";
+import { CopyIcon } from "lucide-react";
 import Image from "next/image";
 import { Toaster, toast } from "sonner";
 
@@ -49,13 +49,7 @@ export default function Home() {
             className="flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-black text-white hover:bg-gray-800 transition-colors"
             onClick={handleCopyClick}
           >
-            <Image
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-              className="dark:invert"
-            />
+            <CopyIcon size={20}/>
             Copy Action URL
           </button>
 
