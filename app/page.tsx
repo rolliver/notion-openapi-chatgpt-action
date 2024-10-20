@@ -11,7 +11,7 @@ export default function Home() {
       await navigator.clipboard.writeText(url);
       toast.success("Notion Import URL copied to clipboard! Paste in ChatGPT 🎉");
     } catch (err) {
-      toast.error("Failed to copy URL 😢");
+      toast.error("Failed to copy URL 😢. "+ err);
     }
   };
 
