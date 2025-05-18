@@ -309,7 +309,8 @@ components:
       properties:
         object:
           type: string
-          enum: [page]
+          enum:
+            - page
         id:
           type: string
           format: uuid
@@ -321,6 +322,16 @@ components:
       properties:
         properties:
           type: object
+          properties:
+            Done:
+              type: object
+              required:
+                - checkbox
+              properties:
+                checkbox:
+                  type: boolean
+                  const: true
+                  example: true
           additionalProperties: true
     PageCreate:
       type: object
@@ -377,7 +388,8 @@ components:
       properties:
         object:
           type: string
-          enum: [database]
+          enum:
+            - database
         id:
           type: string
           format: uuid
@@ -392,7 +404,8 @@ components:
       properties:
         object:
           type: string
-          enum: [user]
+          enum:
+            - user
         id:
           type: string
           format: uuid
@@ -413,7 +426,8 @@ components:
       properties:
         object:
           type: string
-          enum: [block]
+          enum:
+            - block
         id:
           type: string
           format: uuid
@@ -430,7 +444,8 @@ components:
       properties:
         object:
           type: string
-          enum: [comment]
+          enum:
+            - comment
         id:
           type: string
           format: uuid
@@ -447,7 +462,8 @@ components:
       properties:
         object:
           type: string
-          enum: [property_item]
+          enum:
+            - property_item
         id:
           type: string
           format: uuid
@@ -473,7 +489,8 @@ components:
       properties:
         object:
           type: string
-          enum: [database_record]
+          enum:
+            - database_record
         id:
           type: string
           format: uuid
@@ -500,7 +517,8 @@ components:
       properties:
         object:
           type: string
-          enum: [search_result]
+          enum:
+            - search_result
         id:
           type: string
           format: uuid
@@ -514,4 +532,5 @@ components:
       bearerFormat: JWT
 security:
   - BearerAuth: []
+
 ```
